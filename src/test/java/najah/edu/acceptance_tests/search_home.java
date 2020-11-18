@@ -183,12 +183,12 @@ public void aListOfHomesThatMatchesTheTypeSpecificationShouldBeReturnedAndPrinte
 	
 	for( HOME y : pal) {
 		
-		if(pal.equals("1")) {
-		assertEquals(pal,y.getNoofdebrooms());
+		
+		assertEquals(pal.equals("1"),y.getNoofdebrooms());
 
 		  System.out.print(pal);
 		  pal.clear();
-		}
+		
 			
 		}
 
