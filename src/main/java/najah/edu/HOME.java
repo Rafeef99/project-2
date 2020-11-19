@@ -84,6 +84,10 @@ public class HOME {
 
 	public int getNoofbathrooms() {
 		return noofbathrooms;
+		
+		
+		
+		
 	}
 
 
