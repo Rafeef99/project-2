@@ -8,6 +8,10 @@ public class HOME {
 	private  int noofdebrooms;
 	private int noofbathrooms;
 	private int leaselength;
+	    
+	
+	
+	
 	
 	
 	private String type;
@@ -84,10 +88,6 @@ public class HOME {
 
 	public int getNoofbathrooms() {
 		return noofbathrooms;
-		
-		
-		
-		
 	}
 
 
