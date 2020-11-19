@@ -11,9 +11,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import najah.edu.FinderApp;
 import najah.edu.HOME;
+import najah.edu.MockEmailHolder;
 
 public class search_home {
 	
+	private static FinderApp finder;
+	private MockEmailHolder mockholder;
 	
 	public ArrayList <HOME> List =new ArrayList();
 
@@ -22,6 +25,12 @@ public class search_home {
 	FinderApp x=new FinderApp();
 	List<HOME> pal;
 	List<HOME> ww;
+	
+	public search_home(FinderApp f,MockEmailHolder mh) {
+		finder=f;
+		mockholder=mh;
+	}
+	
 	@Given("these homes are contained in the system")
 	public void theseHomesAreContainedInTheSystem(io.cucumber.datatable.DataTable dataTable) {
 
@@ -100,8 +109,13 @@ public void aListOfHomesThatMatchesTheTypeSpecificationShouldBeReturnedAndPrinte
 	  pal.clear();
 	}
 	
+	
 }
 
+@Then("email with the result should be send to user {string}")
+public void emailWithTheResultShouldBeSendToUser(String email){
+	//verify(MockWebHolder.getEmailservece,times(1)).sendEmail(email,FinderApp.);
+}
 
 
 
@@ -632,6 +646,7 @@ public void aListOfHomesThatMatchesTheTypeSpecificationShouldBeReturnedAndPrinte
 		}
 	
 }
+
 
 
 

@@ -1,5 +1,8 @@
 package najah.edu.acceptance_tests;
 
+import static org.junit.Assert.fail;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -21,5 +24,8 @@ strict=true
 
 
 public class acceptance_test {
-
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
 }

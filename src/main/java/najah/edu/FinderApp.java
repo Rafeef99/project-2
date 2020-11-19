@@ -12,13 +12,26 @@ public class FinderApp {
 
 
  List <HOME>homes =new ArrayList<HOME>();
-
+private WebEmailServece emails;
+public static List<HOME>priceList;
+public static List<HOME>placementList;
+public static List<HOME>materialList;
+public static List<HOME>typeList;
+public static List<HOME>nobedroomsList;
+public static List<HOME>nobathdroomsList;
+public static List<HOME>leaselengthList;
+public static List<HOME>petsList;
+public static List<HOME>amenitiesList;
+public static List<HOME>areaList;
 
 	
 public FinderApp() {
 	super();
 }
 
+public void setEmail(WebEmailServece e) {
+	this.emails=e;
+}
 public FinderApp(List<HOME> homes) {
 	super();
 	this.homes = homes;
@@ -40,6 +53,8 @@ public FinderApp(List<HOME> homes) {
     			foundplacment.add(hom);
     		
     	}
+     	placementList=foundplacment;
+     	emails.sendEmail("samedk2000@gmail.com", foundplacment);
      	
 
     	return foundplacment;
@@ -56,6 +71,9 @@ public FinderApp(List<HOME> homes) {
     			foundmatrial.add(hom);
     		
     	}
+     	materialList=foundmatrial;
+     	emails.sendEmail("samedk2000@gmail.com", foundmatrial);
+     	
     	return foundmatrial;
     }
     
@@ -72,6 +90,10 @@ public FinderApp(List<HOME> homes) {
     		}
     		
     	}
+    	priceList=foundprice;
+     	emails.sendEmail("samedk2000@gmail.com", foundprice);
+    	
+    	
 	
         return foundprice;
     }
@@ -87,6 +109,9 @@ public FinderApp(List<HOME> homes) {
     			foundtype.add(hom);
     	}
 	
+    	typeList=foundtype;
+     	emails.sendEmail("samedk2000@gmail.com", foundtype);
+     	
         return foundtype;
     }
     
@@ -110,6 +135,8 @@ public FinderApp(List<HOME> homes) {
    
     		
     	}
+    	nobedroomsList=foundnobedrooms;
+     	emails.sendEmail("samedk2000@gmail.com", foundnobedrooms);
 	
         return foundnobedrooms;
        
@@ -132,6 +159,8 @@ public FinderApp(List<HOME> homes) {
    
     		
     	}
+    	nobathdroomsList=foundnobathrooms;
+     	emails.sendEmail("samedk2000@gmail.com", foundnobathrooms);
 	
         return foundnobathrooms;
        
@@ -147,6 +176,8 @@ public List<HOME> homeByAllowPets(boolean allowPets) {
 		if(hom.isPets()== allowPets )
 			foundAllowPets.add(hom);
 	}
+	petsList=foundAllowPets;
+ 	emails.sendEmail("samedk2000@gmail.com", foundAllowPets);
 
     return foundAllowPets;
 }
@@ -163,6 +194,8 @@ public List<HOME> homeByLeaseLength (int leaseLength) {
 		if(hom.getLeaselength()==leaseLength)
 			foundLeaseLength.add(hom);
 	}
+	leaselengthList=foundLeaseLength;
+ 	emails.sendEmail("samedk2000@gmail.com", foundLeaseLength);
 
     return foundLeaseLength;
 }
@@ -179,6 +212,8 @@ public List<HOME> homeBynAmenities(String[] amenities) {
 		if(hom.getAmenities().equals(amenities))
 			foundAmenities.add(hom);
 	}
+	amenitiesList=foundAmenities;
+ 	emails.sendEmail("samedk2000@gmail.com", foundAmenities);
 
     return foundAmenities;
 }
@@ -204,6 +239,8 @@ public List<HOME> homeBynAmenities(String[] amenities) {
     		}
     		
     	}
+    	areaList=foundarea;
+     	emails.sendEmail("samedk2000@gmail.com", foundarea);
 	
         return foundarea;
     	
